@@ -1,0 +1,96 @@
+/* Catalog */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.prod {
+  transition: border-color var(--t), transform var(--t), background var(--t);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.prod:hover {
+  border-color: var(--vio);
+  transform: translateY(-3px);
+  background: var(--card-h);
+}
+
+.prod-img {
+  aspect-ratio: 3 / 4;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.prod-img img {
+  transition: transform 0.45s var(--ease);
+}
+
+.prod:hover .prod-img img {
+  transform: scale(1.07);
+}
+
+.prod-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.pb-new { background: rgba(45, 212, 191, 0.12); color: var(--teal); border: 1px solid rgba(45, 212, 191, 0.35); }
+.pb-drop { background: rgba(212, 245, 66, 0.1); color: var(--acid); border: 1px solid rgba(212, 245, 66, 0.3); }
+.pb-promo { background: var(--vio-glow); color: var(--vio-light); border: 1px solid rgba(224, 23, 122, 0.4); }
+
+.prod-body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.prod-name {
+  font-family: var(--f-cond);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.prod-price {
+  font-family: var(--f-cond);
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.prod-meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.fpill {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border-m);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.fpill:hover { border-color: var(--vio); color: var(--vio-light); }
+.fpill.active { background: var(--vio); border-color: var(--vio); color: #fff; }

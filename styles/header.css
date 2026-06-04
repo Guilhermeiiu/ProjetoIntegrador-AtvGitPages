@@ -1,0 +1,61 @@
+/* Header */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: var(--header-h);
+  background: rgba(6, 6, 6, 0.92);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  transition: background var(--t);
+}
+
+.logo img {
+  height: 38px;
+  transition: opacity var(--t);
+}
+
+.logo:hover img { opacity: 0.8; }
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  padding: 7px 15px;
+  border-radius: 7px;
+}
+
+.nav-links a:hover { color: var(--white); background: rgba(255, 255, 255, 0.05); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ig-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border: 1px solid var(--border-m);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.ig-pill:hover { border-color: var(--vio); color: var(--vio-light); }

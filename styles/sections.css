@@ -1,0 +1,259 @@
+/* Sections */
+.purpose-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  min-height: 580px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.purpose-image {
+  height: 100%;
+  overflow: hidden;
+  background: #101010;
+}
+
+.purpose-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.prod-img,
+.ev-img,
+.prod-modal-img {
+  overflow: hidden;
+  background: #101010;
+}
+
+.prod-img img,
+.ev-img img,
+.prod-modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.purpose-copy {
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.purpose-copy h2 {
+  font-family: var(--f-display);
+  font-size: 56px;
+  line-height: 0.95;
+  color: var(--white);
+}
+
+.purpose-copy p {
+  font-size: 15px;
+  color: var(--cream);
+  max-width: 440px;
+  line-height: 1.7;
+  opacity: 0.88;
+}
+
+.purpose-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.purpose-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-cond);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.purpose-icon { font-size: 16px; }
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ev-card {
+  transition: border-color var(--t), transform var(--t);
+}
+
+.ev-card:hover { border-color: var(--vio); transform: translateY(-2px); }
+
+.ev-img {
+  aspect-ratio: 4 / 5;
+}
+
+.ev-card:hover .ev-img img { transform: scale(1.04); }
+
+.ev-body {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ev-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--vio-light);
+  background: var(--vio-glow);
+  border: 1px solid rgba(224, 23, 122, 0.3);
+  padding: 3px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.ev-next {
+  color: var(--teal);
+  background: rgba(45, 212, 191, 0.1);
+  border-color: rgba(45, 212, 191, 0.3);
+}
+
+.ev-body h3 {
+  font-family: var(--f-cond);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.ev-body p { font-size: 13px; color: var(--muted); }
+
+.ev-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  color: var(--cream);
+  margin-top: 4px;
+}
+
+.popup-cta {
+  background: linear-gradient(135deg, #2a0016 0%, #450025 50%, #1a0010 100%);
+  border-top: 1px solid rgba(224, 23, 122, 0.3);
+  border-bottom: 1px solid rgba(224, 23, 122, 0.3);
+  padding: 3rem 2rem;
+}
+
+.popup-cta-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.popup-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  background: var(--vio);
+  border-radius: var(--r-lg);
+  padding: 14px 22px;
+  line-height: 1;
+}
+
+.popup-day {
+  font-family: var(--f-display);
+  font-size: 64px;
+  color: #fff;
+  line-height: 0.9;
+}
+
+.popup-month {
+  font-family: var(--f-cond);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--acid);
+}
+
+.popup-text { flex: 1; min-width: 200px; }
+
+.popup-text h3 {
+  font-family: var(--f-display);
+  font-size: 36px;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.popup-text p {
+  font-size: 14px;
+  color: var(--cream);
+  margin-top: 6px;
+}
+
+.location-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.loc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 900px;
+}
+
+.loc-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.loc-copy address p {
+  font-size: 14px;
+  color: var(--cream);
+  line-height: 1.8;
+}
+
+.loc-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.loc-a {
+  font-size: 13px;
+  color: var(--muted);
+  transition: color var(--t);
+}
+
+.loc-a:hover { color: var(--vio-light); }
+
+.loc-map-link {
+  margin-top: 0.5rem;
+  display: inline-flex;
+}
+
+.loc-map {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--vio-light);
+}
+
+.loc-map-pin { color: var(--vio-bright); }
+.loc-map strong { font-size: 15px; }
+.loc-map span { font-size: 12px; color: var(--muted); }
