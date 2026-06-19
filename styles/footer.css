@@ -78,3 +78,6 @@ footer {
   max-width: var(--max-w);
   margin: 0 auto;
 }
+.footer-bottom .integrantes {
+  font-size: 15px;
+  color: white;}
