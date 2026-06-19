@@ -38,20 +38,6 @@
   padding: 4rem 4rem 4rem 3rem;
 }
 
-.slide-kicker {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  padding: 5px 14px;
-  border-radius: 5px;
-  display: inline-block;
-  align-self: flex-start;
-}
-
-.kicker-drop { background: rgba(212, 245, 66, 0.12); color: var(--acid); border: 1px solid rgba(212, 245, 66, 0.3); }
-.kicker-new { background: rgba(45, 212, 191, 0.1); color: var(--teal); border: 1px solid rgba(45, 212, 191, 0.3); }
-.kicker-promo { background: var(--vio-glow); color: var(--vio-light); border: 1px solid rgba(224, 23, 122, 0.35); }
-
 .slide-copy h1 {
   font-family: var(--f-display);
   font-size: 96px;

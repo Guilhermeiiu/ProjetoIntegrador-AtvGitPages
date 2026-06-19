@@ -14,7 +14,6 @@
 
 .prod,
 .ev-card,
-.loc-map,
 .cart-item-img {
   background: var(--card);
   border: 1px solid var(--border);
@@ -36,6 +35,7 @@
 }
 
 .btn-fill {
+  width: 450px;
   padding: 13px 30px;
   border-radius: var(--r);
   font-size: 14px;

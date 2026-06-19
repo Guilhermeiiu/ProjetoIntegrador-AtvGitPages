@@ -16,6 +16,7 @@
 .logo img {
   height: 38px;
   transition: opacity var(--t);
+  border-radius: 8px;
 }
 
 .logo:hover img { opacity: 0.8; }

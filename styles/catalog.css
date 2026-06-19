@@ -44,9 +44,7 @@
   z-index: 2;
 }
 
-.pb-new { background: rgba(45, 212, 191, 0.12); color: var(--teal); border: 1px solid rgba(45, 212, 191, 0.35); }
-.pb-drop { background: rgba(212, 245, 66, 0.1); color: var(--acid); border: 1px solid rgba(212, 245, 66, 0.3); }
-.pb-promo { background: var(--vio-glow); color: var(--vio-light); border: 1px solid rgba(224, 23, 122, 0.4); }
+
 
 .prod-body {
   padding: 12px 14px 14px;

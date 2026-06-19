@@ -82,21 +82,28 @@
 
 .eventos-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 320px);
+  justify-content: center;
   gap: 14px;
 }
 
 .ev-card {
   transition: border-color var(--t), transform var(--t);
+  width: 320px;
 }
 
-.ev-card:hover { border-color: var(--vio); transform: translateY(-2px); }
+.ev-card:hover {
+  border-color: var(--vio);
+  transform: translateY(-2px);
+}
 
 .ev-img {
   aspect-ratio: 4 / 5;
 }
 
-.ev-card:hover .ev-img img { transform: scale(1.04); }
+.ev-card:hover .ev-img img {
+  transform: scale(1.04);
+}
 
 .ev-body {
   padding: 14px 16px 18px;
@@ -199,61 +206,3 @@
   color: var(--cream);
   margin-top: 6px;
 }
-
-.location-section {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-}
-
-.loc-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  max-width: 900px;
-}
-
-.loc-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-.loc-copy address p {
-  font-size: 14px;
-  color: var(--cream);
-  line-height: 1.8;
-}
-
-.loc-links {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.loc-a {
-  font-size: 13px;
-  color: var(--muted);
-  transition: color var(--t);
-}
-
-.loc-a:hover { color: var(--vio-light); }
-
-.loc-map-link {
-  margin-top: 0.5rem;
-  display: inline-flex;
-}
-
-.loc-map {
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: var(--vio-light);
-}
-
-.loc-map-pin { color: var(--vio-bright); }
-.loc-map strong { font-size: 15px; }
-.loc-map span { font-size: 12px; color: var(--muted); }
