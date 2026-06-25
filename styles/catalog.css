@@ -1,9 +1,12 @@
+
+
 /* Catalog */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
+
 
 .prod {
   transition: border-color var(--t), transform var(--t), background var(--t);
@@ -70,8 +73,8 @@
 }
 
 .prod-meta {
-  font-size: 11px;
-  color: var(--muted);
+  font-size: 15px;   /* Aumenta a fonte */
+  color: #ffffff;    /* Branco */
 }
 .filter-pills {
   display: flex;

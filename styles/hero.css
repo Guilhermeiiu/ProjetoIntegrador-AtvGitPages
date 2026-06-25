@@ -58,6 +58,9 @@
   padding: 12px 0;
   overflow: hidden;
   white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .manifesto-track {
