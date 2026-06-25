@@ -60,3 +60,238 @@
 }
 
 .ig-pill:hover { border-color: var(--vio); color: var(--vio-light); }
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+/* TABLETS */
+
+@media (max-width: 992px){
+
+#header{
+
+    padding:15px 25px;
+    height:auto;
+    flex-wrap:wrap;
+    gap:15px;
+
+}
+
+.logo{
+
+    width:100%;
+    display:flex;
+    justify-content:center;
+
+}
+
+.logo img{
+
+    height:45px;
+
+}
+
+.nav-links{
+
+    position:static;
+    transform:none;
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.nav-links a{
+
+    padding:8px 14px;
+    font-size:13px;
+
+}
+
+.header-actions{
+
+    width:100%;
+    justify-content:center;
+
+}
+
+.hero{
+
+    grid-template-columns:1fr;
+    height:auto;
+
+}
+
+.slide-bg{
+
+    height:55vh;
+
+}
+
+.slide-bg::after{
+
+    background:linear-gradient(
+        to top,
+        var(--black) 10%,
+        transparent 55%
+    );
+
+}
+
+.slide-copy{
+
+    padding:45px 30px;
+    text-align:center;
+    align-items:center;
+
+}
+
+.slide-copy h1{
+
+    font-size:68px;
+
+}
+
+.slide-copy p{
+
+    max-width:520px;
+
+}
+
+}
+
+/* CELULARES */
+
+@media (max-width:768px){
+
+#header{
+
+    padding:15px;
+
+}
+
+.logo img{
+
+    height:40px;
+
+}
+
+.nav-links{
+
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+
+}
+
+.nav-links a{
+
+    width:100%;
+    text-align:center;
+    padding:12px;
+
+}
+
+.header-actions{
+
+    margin-top:10px;
+
+}
+
+.ig-pill{
+
+    width:100%;
+    justify-content:center;
+
+}
+
+.hero{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.slide-bg{
+
+    order:1;
+    height:45vh;
+
+}
+
+.slide-copy{
+
+    order:2;
+    padding:35px 20px;
+
+}
+
+.slide-copy h1{
+
+    font-size:48px;
+    line-height:1;
+
+}
+
+.slide-copy p{
+
+    font-size:14px;
+
+}
+
+.manifesto-track{
+
+    font-size:11px;
+    gap:14px;
+
+}
+
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width:480px){
+
+.slide-bg{
+
+    height:38vh;
+
+}
+
+.slide-copy{
+
+    padding:28px 18px;
+
+}
+
+.slide-copy h1{
+
+    font-size:38px;
+
+}
+
+.slide-copy p{
+
+    font-size:13px;
+
+}
+
+.nav-links a{
+
+    font-size:12px;
+
+}
+
+.ig-pill{
+
+    font-size:11px;
+
+}
+
+}
