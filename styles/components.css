@@ -1,7 +1,7 @@
-/* Components */
 .btn-fill,
 .btn-fill-sm,
-.btn-outline-v {
+.btn-outline-v,
+.btn-load-more {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -11,9 +11,9 @@
   text-transform: uppercase;
   cursor: pointer;
 }
-
 .prod,
 .ev-card,
+.loc-map,
 .cart-item-img {
   background: var(--card);
   border: 1px solid var(--border);
@@ -22,7 +22,8 @@
 }
 
 .btn-fill,
-.btn-fill-sm {
+.btn-fill-sm,
+.btn-load-more {
   color: #fff;
   background: var(--vio);
   border: none;
@@ -32,15 +33,9 @@
   border: 1px solid var(--vio);
   background: transparent;
   color: var(--vio-light);
-  display: inline-flex;
-  width: fit-content;
-  padding: 8px 16px;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn-fill {
-  width: 450px;
   padding: 13px 30px;
   border-radius: var(--r);
   font-size: 14px;
@@ -49,12 +44,14 @@
 }
 
 .btn-fill:hover,
-.btn-fill-sm:hover {
+.btn-fill-sm:hover,
+.btn-load-more:hover {
   background: var(--vio-bright);
   transform: translateY(-1px);
 }
 
-.btn-fill:active {
+.btn-fill:active,
+.btn-load-more:active {
   transform: translateY(0);
 }
 
@@ -74,6 +71,14 @@
 
 .btn-outline-v:hover {
   background: var(--vio-glow);
+}
+
+.btn-load-more {
+  margin: 0 auto;
+  padding: 12px 24px;
+  border-radius: var(--r);
+  font-size: 14px;
+  letter-spacing: 0.05em;
 }
 
 .section { padding: 4rem 2rem; }

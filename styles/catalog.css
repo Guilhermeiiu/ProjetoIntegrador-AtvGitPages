@@ -1,21 +1,93 @@
-
-
 /* Catalog */
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.catalog-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 360px;
+  max-width: 100%;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-m);
+  background: var(--card);
+  color: var(--muted);
+  transition: border-color var(--t), box-shadow var(--t), color var(--t);
+}
+
+.catalog-search input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--white);
+  padding: 12px 0;
+  outline: none;
+}
+
+.catalog-search input::placeholder { color: var(--muted); }
+
+.catalog-search:focus-within {
+  border-color: var(--vio);
+  color: var(--vio-light);
+  box-shadow: 0 0 0 4px var(--vio-glow);
+}
+
+.catalog-status {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.filter-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.fpill {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border-m);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.fpill:hover { border-color: var(--vio); color: var(--vio-light); }
+.fpill.active { background: var(--vio); border-color: var(--vio); color: #fff; }
+
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
+.catalog-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
 
 .prod {
+  cursor: pointer;
   transition: border-color var(--t), transform var(--t), background var(--t);
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-.prod:hover {
+.prod:hover,
+.prod:focus-visible {
   border-color: var(--vio);
   transform: translateY(-3px);
   background: var(--card-h);
@@ -31,7 +103,8 @@
   transition: transform 0.45s var(--ease);
 }
 
-.prod:hover .prod-img img {
+.prod:hover .prod-img img,
+.prod:focus-visible .prod-img img {
   transform: scale(1.07);
 }
 
@@ -47,7 +120,9 @@
   z-index: 2;
 }
 
-
+.pb-new { background: rgba(45, 212, 191, 0.12); color: var(--teal); border: 1px solid rgba(45, 212, 191, 0.35); }
+.pb-drop { background: rgba(212, 245, 66, 0.1); color: var(--acid); border: 1px solid rgba(212, 245, 66, 0.3); }
+.pb-promo { background: var(--vio-glow); color: var(--vio-light); border: 1px solid rgba(224, 23, 122, 0.4); }
 
 .prod-body {
   padding: 12px 14px 14px;
@@ -73,25 +148,32 @@
 }
 
 .prod-meta {
-  font-size: 15px;   /* Aumenta a fonte */
-  color: #ffffff;    /* Branco */
+  font-size: 11px;
+  color: var(--muted);
 }
-.filter-pills {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.fpill {
+
+.prod-add {
+  margin: 0 14px 14px;
+  width: auto;
+  align-self: stretch;
+  background: var(--vio);
+  color: #fff;
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.07em;
-  padding: 8px 22px;
-  border-radius: 999px;
-  border: 1px solid var(--border-m);
-  background: none;
-  color: var(--muted);
+  letter-spacing: 0.08em;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(6px);
 }
-.fpill:hover { border-color: var(--vio); color: var(--vio-light); }
-.fpill.active { background: var(--vio); border-color: var(--vio); color: #fff; }
+
+.prod:hover .prod-add,
+.prod:focus-visible .prod-add {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prod-add:hover { background: var(--vio-bright); }
+.prod-add:active { transform: scale(0.97); }

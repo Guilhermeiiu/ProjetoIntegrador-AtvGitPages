@@ -6,8 +6,23 @@
   max-height: 900px;
   overflow: hidden;
   background: var(--black);
+}
+
+.slides { width: 100%; height: 100%; }
+
+.slide {
+  position: absolute;
+  inset: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .slide-bg {
@@ -28,7 +43,10 @@
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  transition: transform 8s ease;
 }
+
+.slide.active .slide-bg img { transform: scale(1.05); }
 
 .slide-copy {
   display: flex;
@@ -37,6 +55,41 @@
   gap: 1.25rem;
   padding: 4rem 4rem 4rem 3rem;
 }
+
+.slide-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  padding: 5px 14px;
+  border-radius: 5px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.kicker-drop { background: rgba(212, 245, 66, 0.12); color: var(--acid); border: 1px solid rgba(212, 245, 66, 0.3); }
+.kicker-new { background: rgba(45, 212, 191, 0.1); color: var(--teal); border: 1px solid rgba(45, 212, 191, 0.3); }
+.kicker-promo { background: var(--vio-glow); color: var(--vio-light); border: 1px solid rgba(224, 23, 122, 0.35); }
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(6, 6, 6, 0.65);
+  border: 1px solid var(--border-m);
+  color: var(--white);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hero-arrow:hover { background: var(--vio); border-color: var(--vio); }
+.hero-prev { left: 1.5rem; }
+.hero-next { right: 1.5rem; }
 
 .slide-copy h1 {
   font-family: var(--f-display);
@@ -58,9 +111,6 @@
   padding: 12px 0;
   overflow: hidden;
   white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .manifesto-track {

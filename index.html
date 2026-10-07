@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-whatsapp="5561999999999" data-instagram-url="https://instagram.com/boomalternativa">
 
 <div class="announce-bar">
   <div class="announce-track">
-    <span>🔥 Pop-up no Bosque · <strong>19/04, Sáb 14h–20h</strong></span>
+    <span>🔥 Pop-up no Bosque · <strong>19/04, Sáb 14h–20h</strong> · São Sebastião DF</span>
     <span class="a-sep">✦</span>
     <span>Frete grátis acima de R$200</span>
     <span class="a-sep">✦</span>
     <span>Arte autoral · Tiragem limitada</span>
     <span class="a-sep">✦</span>
-    <span>🔥 Pop-up no Bosque · <strong>19/04, Sáb 14h–20h</strong></span>
+    <span>🔥 Pop-up no Bosque · <strong>19/04, Sáb 14h–20h</strong> · São Sebastião DF</span>
     <span class="a-sep">✦</span>
     <span>Frete grátis acima de R$200</span>
     <span class="a-sep">✦</span>
@@ -45,19 +45,100 @@
       📷
       @boomalternativa
     </a>
+    <button class="cart-toggle" id="cartToggle" type="button" aria-label="Abrir carrinho" aria-controls="cartSidebar" aria-expanded="false">
+      🛒
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
   </div>
 </header>
 
+<aside class="cart-sidebar" id="cartSidebar" aria-label="Carrinho de compras" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Sacola <span id="cartCount">(0)</span></h2>
+    <button class="cart-close" id="cartClose" type="button" aria-label="Fechar carrinho">
+      ✕
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems" aria-live="polite">
+    <div class="cart-empty">
+      🛒
+      <p>Sua sacola está vazia</p>
+      <a href="#catalogo" data-action="close-cart" class="btn-fill-sm">Ver produtos</a>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" hidden>
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">R$ 0,00</span>
+    </div>
+    <button class="btn-fill btn-whatsapp" id="checkoutBtn" type="button" data-action="checkout">
+      💬
+      Finalizar via WhatsApp
+    </button>
+    <p class="cart-note">Pedidos via WhatsApp ou Instagram DM</p>
+  </div>
+</aside>
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+
 <section class="hero" id="home">
-  <div class="slide-bg">
-    <img src="img/camisa8.png" alt="Tee Medusa" fetchpriority="high">
+  <div class="slides" id="slides">
+    <div class="slide active">
+      <div class="slide-bg">
+        <img src="img/camisa8.png" alt="Tee Medusa" fetchpriority="high">
+      </div>
+      <div class="slide-copy">
+        <span class="slide-kicker kicker-drop">Drop #03 — Arte Autoral</span>
+        <h1>Vestir a<br>Resistência</h1>
+        <p>Serigrafia artesanal sobre algodão premium. Cada peça, uma obra.</p>
+        <a href="#catalogo" class="btn-fill">Ver Coleção</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg">
+        <img src="img/camisa4.png" alt="Tee Teal BOOM" loading="lazy">
+      </div>
+      <div class="slide-copy">
+        <span class="slide-kicker kicker-new">Novo</span>
+        <h1>Moda<br>Agênero</h1>
+        <p>Shapes amplos, identidade aberta. Para corpos que recusam rótulos.</p>
+        <a href="#proposito" class="btn-fill">Nosso propósito</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg">
+        <img src="img/casaco2.png" alt="Corta-vento Vermelho" loading="lazy">
+      </div>
+      <div class="slide-copy">
+        <span class="slide-kicker kicker-promo">Coleção Inverno</span>
+        <h1>Da Rua<br>pro Mundo</h1>
+        <p>Produção local, alcance nacional. Centro-Oeste na vanguarda do streetwear.</p>
+        <a href="#catalogo" class="btn-fill">Explorar</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="slide-bg">
+        <img src="img/camisa2.png" alt="Tee Store" loading="lazy">
+      </div>
+      <div class="slide-copy">
+        <span class="slide-kicker kicker-drop">Boom Alternativa</span>
+        <h1>Eu vendo<br>conforto</h1>
+        <p>São Sebastião – DF. Arte, periferia e representatividade em cada costura.</p>
+        <a href="#catalogo" class="btn-fill">Comprar agora</a>
+      </div>
+    </div>
   </div>
-  <div class="slide-copy">
-  
-    <h1>Vestir a<br>Resistência</h1>
-    <p>Serigrafia artesanal sobre algodão premium. Cada peça, uma obra.</p>
-    <a href="#catalogo" class="btn-fill">Ver Coleção</a>
-  </div>
+
+  <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="Slide anterior">
+    ←
+  </button>
+  <button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="Próximo slide">
+    →
+  </button>
+  <div class="hero-dots" id="heroDots"></div>
+
 </section>
 
 <div class="manifesto-strip">
@@ -78,7 +159,6 @@
     <span>Arte de Rua</span><em>✦</em>
     <span>Tiragem Limitada</span><em>✦</em>
     <span>São Sebastião DF</span><em>✦</em>
-    
   </div>
 </div>
 
@@ -95,11 +175,18 @@
       <button class="fpill" type="button" data-cat="acess" aria-pressed="false">Acessórios</button>
     </div>
   </div>
-  
-  <div class="product-grid">
-    <article class="prod">
+  <div class="catalog-toolbar">
+    <label class="catalog-search" for="searchCatalog">
+      <span class="sr-only">Buscar produtos</span>
+      🔍
+      <input id="searchCatalog" type="search" placeholder="Buscar por nome, modelagem ou tecido">
+    </label>
+    <p class="catalog-status" id="catalogStatus" aria-live="polite"></p>
+  </div>
+  <div class="product-grid" id="productGrid">
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tee Medusa Preta" data-id="1" data-name="Tee Medusa Preta" data-cat="camisa" data-img="img/camisa8.png" data-price="94.90" data-badge="drop" data-badge-label="Limitada" data-meta="Serigrafia artesanal · P M G GG" data-desc="Camiseta oversized preta com arte serigrafada artesanalmente. Design exclusivo da Boom Alternativa, produzido em tiragem limitada. 100% algodão fio 30.1 penteado.">
       <div class="prod-img">
-        
+        <span class="prod-badge pb-drop">Limitada</span>
         <img src="img/camisa8.png" alt="Tee Medusa Preta" loading="lazy" decoding="async">
       </div>
       <div class="prod-body">
@@ -107,11 +194,12 @@
         <div class="prod-price">R$ 94,90</div>
         <div class="prod-meta">Serigrafia artesanal · P M G GG</div>
       </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
     </article>
 
-    <article class="prod">
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tee BOOM Teal Bubble" data-id="2" data-name="Tee BOOM Teal Bubble" data-cat="camisa" data-img="img/camisa4.png" data-price="89.90" data-badge="new" data-badge-label="Novo" data-meta="Oversized · P M G GG" data-desc="Camiseta oversized preta com estampa BOOM Alternativa em lettering estilo bolha. Arte autoral, 100% algodão, corte amplo e confortável.">
       <div class="prod-img">
-        
+        <span class="prod-badge pb-new">Novo</span>
         <img src="img/camisa4.png" alt="Tee BOOM Teal Bubble" loading="lazy" decoding="async">
       </div>
       <div class="prod-body">
@@ -119,11 +207,12 @@
         <div class="prod-price">R$ 89,90</div>
         <div class="prod-meta">Oversized · P M G GG</div>
       </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
     </article>
 
-    <article class="prod">
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tee Listrada Vermelha" data-id="3" data-name="Tee Listrada Vermelha" data-cat="camisa" data-img="img/camisa6.png" data-price="79.90" data-badge="new" data-badge-label="Novo" data-meta="Oversized · P M G" data-desc="Camiseta oversized de listras vermelha, branca e azul com bordado BOOM no peito. Gola careca preta, corte amplo agênero.">
       <div class="prod-img">
-        
+        <span class="prod-badge pb-new">Novo</span>
         <img src="img/camisa6.png" alt="Tee Listrada Vermelha" loading="lazy" decoding="async">
       </div>
       <div class="prod-body">
@@ -131,9 +220,10 @@
         <div class="prod-price">R$ 79,90</div>
         <div class="prod-meta">Oversized · P M G</div>
       </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
     </article>
 
-    <article class="prod">
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tee Listrada Azul/Brown" data-id="4" data-name="Tee Listrada Azul/Brown" data-cat="camisa" data-img="img/camisa7.png" data-price="84.90" data-badge="" data-badge-label="" data-meta="100% Algodão · P M G" data-desc="Camiseta de listras largas em azul e marrom com logo BOOM Alternativa. Corte oversized, gola canalê, 100% algodão.">
       <div class="prod-img">
         <img src="img/camisa7.png" alt="Tee Listrada Azul/Brown" loading="lazy" decoding="async">
       </div>
@@ -142,8 +232,136 @@
         <div class="prod-price">R$ 84,90</div>
         <div class="prod-meta">100% Algodão · P M G</div>
       </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
     </article>
-   
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Camisa Listrada P&B" data-id="5" data-name="Camisa Listrada P&B" data-cat="camisa" data-img="img/camisa9.png" data-price="84.90" data-badge="" data-badge-label="" data-meta="Botão · Unissex · P M G" data-desc="Camisa de botão listrada preta e branca. Manga curta, corte amplo unissex. Tecido leve e de fácil manutenção.">
+      <div class="prod-img">
+        <img src="img/camisa9.png" alt="Camisa Listrada P&B" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Camisa Listrada P&B</div>
+        <div class="prod-price">R$ 84,90</div>
+        <div class="prod-meta">Botão · Unissex · P M G</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Camisa Lilás" data-id="6" data-name="Camisa Lilás" data-cat="camisa" data-img="img/camisa10.png" data-price="79.90" data-badge="new" data-badge-label="Novo" data-meta="Botão · Unissex · P M G GG" data-desc="Camisa de botão manga curta na cor lilás pastel. Corte confortável e versátil, unissex. Tecido macio de alta qualidade com acabamento premium.">
+      <div class="prod-img">
+        <span class="prod-badge pb-new">Novo</span>
+        <img src="img/camisa10.png" alt="Camisa Lilás" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Camisa Lilás</div>
+        <div class="prod-price">R$ 79,90</div>
+        <div class="prod-meta">Botão · Unissex · P M G GG</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Camisa Preta Classic" data-id="7" data-name="Camisa Preta Classic" data-cat="camisa" data-img="img/camisa11.png" data-price="79.90" data-badge="" data-badge-label="" data-meta="Botão · Unissex · P M G GG" data-desc="Camisa de botão preta clássica com logo BOOM bordado. Corte amplo unissex, manga curta, tecido de viscose de alta qualidade.">
+      <div class="prod-img">
+        <img src="img/camisa11.png" alt="Camisa Preta Classic" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Camisa Preta Classic</div>
+        <div class="prod-price">R$ 79,90</div>
+        <div class="prod-meta">Botão · Unissex · P M G GG</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tee BOOM Store" data-id="8" data-name="Tee BOOM Store" data-cat="camisa" data-img="img/camisa2.png" data-price="89.90" data-badge="drop" data-badge-label="Drop" data-meta="Oversized · Arte autoral" data-desc="Camiseta oversized preta com arte autoral exclusiva da Boom Alternativa. Produzida em drop especial com tiragem limitada. 100% algodão.">
+      <div class="prod-img">
+        <span class="prod-badge pb-drop">Drop</span>
+        <img src="img/camisa2.png" alt="Tee BOOM Store" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Tee BOOM Store</div>
+        <div class="prod-price">R$ 89,90</div>
+        <div class="prod-meta">Oversized · Arte autoral</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tee Cassette" data-id="9" data-name="Tee Cassette" data-cat="camisa" data-img="img/camisa3frente.png" data-price="84.90" data-badge="" data-badge-label="" data-meta="Oversized · Arte de rua" data-desc="Camiseta oversized com estampa de arte de rua inspirada na cultura musical. Design único e autoral, 100% algodão fio penteado.">
+      <div class="prod-img">
+        <img src="img/camisa3frente.png" alt="Tee Cassette" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Tee Cassette</div>
+        <div class="prod-price">R$ 84,90</div>
+        <div class="prod-meta">Oversized · Arte de rua</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tee Listrada Rosa" data-id="10" data-name="Tee Listrada Rosa" data-cat="camisa" data-img="img/camisa5.png" data-price="79.90" data-badge="promo" data-badge-label="Promo" data-meta="Cropped · P M G" data-desc="Camiseta cropped de listras com bordado BOOM no peito. Corte moderno e confortável, ideal para looks descontraídos. 100% algodão.">
+      <div class="prod-img">
+        <span class="prod-badge pb-promo">Promo</span>
+        <img src="img/camisa5.png" alt="Tee Listrada Rosa" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Tee Listrada Rosa</div>
+        <div class="prod-price">R$ 79,90</div>
+        <div class="prod-meta">Cropped · P M G</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Corta-vento Vermelho" data-id="11" data-name="Corta-vento Vermelho" data-cat="casaco" data-img="img/casaco2.png" data-price="159.90" data-badge="drop" data-badge-label="Drop" data-meta="Conjunto · Windbreaker · Unissex" data-desc="Conjunto corta-vento vermelho com calça. Windbreaker leve e resistente ao vento, com logo BOOM bordado no peito. Corte unissex e agênero.">
+      <div class="prod-img">
+        <span class="prod-badge pb-drop">Drop</span>
+        <img src="img/casaco2.png" alt="Corta-vento Vermelho" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Corta-vento Vermelho</div>
+        <div class="prod-price">R$ 159,90</div>
+        <div class="prod-meta">Conjunto · Windbreaker · Unissex</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Corta-vento Navy" data-id="12" data-name="Corta-vento Navy" data-cat="casaco" data-img="img/casaco.png" data-price="149.90" data-badge="new" data-badge-label="Novo" data-meta="Windbreaker · P M G" data-desc="Corta-vento navy com capuz. Material leve e impermeável, zíper frontal, bolso canguru. Logo BOOM bordado. Unissex.">
+      <div class="prod-img">
+        <span class="prod-badge pb-new">Novo</span>
+        <img src="img/casaco.png" alt="Corta-vento Navy" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Corta-vento Navy</div>
+        <div class="prod-price">R$ 149,90</div>
+        <div class="prod-meta">Windbreaker · P M G</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Boné BOOM" data-id="13" data-name="Boné BOOM" data-cat="acess" data-img="img/boné.png" data-price="59.90" data-badge="new" data-badge-label="Novo" data-meta="Snapback · Bordado" data-desc="Boné snapback preto com logo BOOM bordado em lettering exclusivo. Aba reta, ajuste traseiro, tecido resistente.">
+      <div class="prod-img">
+        <span class="prod-badge pb-new">Novo</span>
+        <img src="img/boné.png" alt="Boné BOOM" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Boné BOOM</div>
+        <div class="prod-price">R$ 59,90</div>
+        <div class="prod-meta">Snapback · Bordado</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+
+    <article class="prod" tabindex="0" role="button" aria-label="Abrir detalhes de Tote Bag BOOM" data-id="14" data-name="Tote Bag BOOM" data-cat="acess" data-img="img/bolsa.png" data-price="49.90" data-badge="" data-badge-label="" data-meta="Lona · Arte serigrafada" data-desc="Sacola tote bag em lona resistente com estampa serigrafada exclusiva BOOM Alternativa. Alças longas, capacidade ampla, sustentável e estilosa.">
+      <div class="prod-img">
+        <img src="img/bolsa.png" alt="Tote Bag BOOM" loading="lazy" decoding="async">
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Tote Bag BOOM</div>
+        <div class="prod-price">R$ 49,90</div>
+        <div class="prod-meta">Lona · Arte serigrafada</div>
+      </div>
+      <button class="prod-add" type="button" data-action="add-to-cart">+ Adicionar à sacola</button>
+    </article>
+  </div>
+  <div class="catalog-actions" id="catalogActions"></div>
 </section>
 
 <section class="purpose-section" id="proposito">
@@ -180,7 +398,7 @@
       <div class="ev-body">
         <span class="ev-tag">Festival</span>
         <h3>Festival Skate no Quadrado</h3>
-        <span>Em collab com Feira no Quadrado. Skate · Música · Arte Urbana.</span>
+        <p>Em collab com Feira no Quadrado. Skate · Música · Arte Urbana.</p>
         <div class="ev-meta"><span>📅 28.03 · Parque da Cidade</span><span>🕗 8h–19h</span></div>
       </div>
     </div>
@@ -189,7 +407,7 @@
       <div class="ev-body">
         <span class="ev-tag ev-next">Próximo</span>
         <h3>Perifa Runway</h3>
-        <span>Marcas selecionadas. Boom Alternativa confirmada!</span>
+        <p>Marcas selecionadas. Boom Alternativa confirmada!</p>
         <div class="ev-meta"><span>📅 26 de Abril</span><span>📍 Complexo Cultural Samambaia</span></div>
       </div>
     </div>
@@ -198,7 +416,7 @@
       <div class="ev-body">
         <span class="ev-tag">Arte Impressa</span>
         <h3>MOTIM · Galeria dos Estados</h3>
-        <span>Feira colaborativa · 17ª edição · Acesso livre.</span>
+        <p>Feira colaborativa · 17ª edição · Acesso livre.</p>
         <div class="ev-meta"><span>📅 07 &amp; 08/06</span><span>🕗 11h–20h</span></div>
       </div>
     </div>
@@ -215,11 +433,38 @@
     <a href="https://instagram.com/boomalternativa" target="_blank" rel="noreferrer" class="btn-fill">Quero ir! ↗</a>
   </div>
 </div>
+
+<section class="section location-section">
+  <div class="loc-grid">
+    <div class="loc-copy">
+      <p class="eyebrow">Onde nos encontrar</p>
+      <h2 class="section-title">Boom<br>Alternativa</h2>
+      <address>
+        <p>Rua 09, Quadra 19<br>Residencial do Bosque<br>São Sebastião — DF</p>
+        <br>
+        <p><strong>Seg–Sex:</strong> 10h às 20h<br><strong>Sábado:</strong> 10h às 18h</p>
+      </address>
+      <div class="loc-links">
+        <a href="mailto:comercial@boomalternativa.com.br" class="loc-a">📧 comercial@boomalternativa.com.br</a>
+        <a href="https://instagram.com/boomalternativa" target="_blank" rel="noreferrer" class="loc-a">📸 @boomalternativa</a>
+        <a href="https://maps.google.com/?q=Rua+09+Quadra+19+Residencial+do+Bosque+São+Sebastião+DF" target="_blank" rel="noreferrer" class="btn-outline-v loc-map-link">Ver no mapa →</a>
+      </div>
+    </div>
+    <div class="loc-map">
+      <div class="loc-map-pin">
+        📍
+      </div>
+      <strong>São Sebastião, DF</strong>
+      <span>Residencial do Bosque</span>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <img src="img/logo.jpg" alt="Boom Alternativa" class="footer-logo">
-      <span>Moda streetwear agênero e autoral.<br>Feita no Centro-Oeste, para quem existe.</span>
+      <p>Moda streetwear agênero e autoral.<br>Feita no Centro-Oeste, para quem existe.</p>
       <span class="co-seal">✦ Produzido no Centro-Oeste ✦</span>
     </div>
     <div class="footer-col">
@@ -230,6 +475,7 @@
     </div>
     <div class="footer-col">
       <strong>Contato</strong>
+      <a href="mailto:comercial@boomalternativa.com.br">comercial@boomalternativa.com.br</a>
       <a href="https://instagram.com/boomalternativa" target="_blank" rel="noreferrer">@boomalternativa</a>
       <span>Rua 09, Qd 19 — São Sebastião, DF</span>
     </div>
@@ -240,5 +486,25 @@
   </div>
 </footer>
 
+<div class="prod-modal" id="productModal" aria-hidden="true">
+    <div class="prod-modal-overlay" data-action="close-modal"></div>
+    <div class="prod-modal-box" role="dialog" aria-modal="true" aria-labelledby="prodModalName">
+      <button class="prod-modal-close" id="prodModalClose" type="button" aria-label="Fechar">
+        ✕
+      </button>
+      <div class="prod-modal-img" id="prodModalImg"></div>
+      <div class="prod-modal-info">
+        <span class="prod-modal-badge" id="prodModalBadge"></span>
+        <h2 class="prod-modal-name" id="prodModalName"></h2>
+        <div class="prod-modal-price" id="prodModalPrice"></div>
+        <p class="prod-modal-meta" id="prodModalMeta"></p>
+        <p class="prod-modal-desc" id="prodModalDesc"></p>
+        <button class="btn-fill prod-modal-btn" id="prodModalAddBtn" type="button">+ Adicionar à sacola</button>
+        <p class="prod-modal-note">Pedidos via WhatsApp ou Instagram DM</p>
+      </div>
+    </div>
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>
